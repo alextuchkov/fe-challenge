@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Contact form</title>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <form action="">
+      <h1>Contact Us</h1>
+
+      <div class="row">
+
+        <div class="col">
+          <label for="first-name">First Name *</label>
+          <input type="text" name="first-name">
+        </div>
+        <div class="col">
+          <label for="first-name">Last Name *</label>
+          <input type="text" name="last-name">
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="email">Email Adress *</label>
+          <input type="email" name="email" id="email">
+        </div>
+      </div>
+
+      <legend>Query Type *</legend>
+      <div class="row">
+
+
+        <div class="col rdio">
+          <input type="radio" id="gen-enq" name="rdio" value="gen-enq" />
+          <label for="gen-enq">General Enquiry</label>
+        </div>
+
+        <div class="col rdio">
+          <input type="radio" id="sup-req" name="rdio" value="sup-req" />
+          <label for="sup-req">Support Requests</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="message">Message *</label>
+          <textarea name="message" id="message"></textarea>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <input type="checkbox" name="conf" id="conf">
+        <label for="conf">I consent to being contacted by the team *</label>
+      </div>
+      <div class="row">
+        <input type="submit" id="submitForm" value="Submit">
+      </div>
+
+
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('submitForm').addEventListener('click', function () {
+      alert("some text")
+    });
+
+
+  </script>
+
+
+  <!-- This field is required
+
+  Last Name
+  This field is required
+
+  Email Address
+  Please enter a valid email address
+  This field is required
+
+  Query Type
+  General Enquiry
+  Support Request
+  Please select a query type
+
+  Message
+  This field is required
+
+  I consent to being contacted by the team
+  To submit this form, please consent to being contacted
+
+  Submit
+
+  Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+
+</html>

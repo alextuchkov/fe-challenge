@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue : hsl(217, 54%, 11%); /* (main BG) */
+    --very-dark-blue-b: hsl(216, 50%, 16%); /* (card BG) */
+    --very-dark-blue-c: hsl(215, 32%, 27%); /* line */
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--soft-blue);
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+ 
+
+}
+
+h3 {
+    color: var(--white);
+    margin-top: 1rem;
+}
+
+hr {
+    border: none; 
+    border-top: 1px solid var(--very-dark-blue-c); /* Custom border color */
+    height: 1px;
+    }
+
+a {
+    color: var(--white);
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: var(--cyan);
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--very-dark-blue-b);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 20rem;
+
+}
+
+.img-block > img {
+    border-radius: 0.5rem;
+    max-width: 18rem;
+}
+    
+
+.img-block > .overlay {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    border-radius: 0.5rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .img-block .overlay:hover {
+    opacity: 1;
+  } 
+
+
+.card-footer, .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.card-footer > img {
+    width: 15%;
+    border: 0.01rem solid var(--white);
+    border-radius: 50%;
+}
+
+.card-accent-copy {
+    color: var(--white);
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: var(--cyan);
+}

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-nutmeg: hsl(14, 45%, 36%);
+    --color-dark-raspberry: hsl(332, 51%, 32%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-rose-white: hsl(330, 100%, 98%);
+    --color-eggshell: hsl(30, 54%, 90%);
+    --color-light-grey: hsl(30, 18%, 87%);
+    --color-wenge-brown: hsl(30, 10%, 34%);
+    --color-dark-charcoal: hsl(24, 5%, 18%);
+}
+
+body {
+    background-color: var(--color-eggshell);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Outfit", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: "Young Serif", serif;
+}
+
+h1 {
+    color: var(--color-dark-charcoal);
+}
+
+h2 {
+    color: var(--color-nutmeg);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: "Outfit", sans-serif;
+    color: var(--color-dark-raspberry);
+}
+
+p, li {
+    font-family: "Outfit", sans-serif;
+    color: var(--color-dark-charcoal);
+}
+
+ol li::marker {
+    color: var(--color-nutmeg);
+    font-weight: 600;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-top: 1px solid var(--color-light-grey);
+}
+
+span {
+    color: var(--color-nutmeg);
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    background-color: var(--color-white);
+    border-radius: 6px;
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.container ul, ol {
+    padding-left: 20px;
+}
+
+.img-block>img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.info {
+    background-color: var(--color-rose-white);
+    border-radius: 6px;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 90%;
+    }
+    
+}
