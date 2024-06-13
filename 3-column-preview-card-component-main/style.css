@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
+
+
+:root {
+    --font-lexend: "Lexend Deca", sans-serif; /* 400 */
+    --font-big-shld: "Big Shoulders Display", sans-serif; /* 400 */
+    --font-size: 1rem;
+    --font-weight-regular: 400;
+    --white:#fff;
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-lexend);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--very-light-gray);
+    color: var(--transparent-white);
+}
+
+button {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    margin-top: 2rem;
+    
+}
+
+button:hover {
+    
+    cursor: pointer;
+    border: 2px solid var(--very-light-gray);
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 40rem;
+    min-height: 25rem; 
+    margin-top: 5rem;
+  
+}
+
+.col {
+    padding: 2rem;
+}
+
+.col-body {
+    height: 60%;
+}
+
+.sedan {
+    background-color: var(--bright-orange);
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+.sedan > button {
+    color:var(--bright-orange);
+}
+.sedan > button:hover {
+    color: var(--very-light-gray);
+    background-color: var(--bright-orange);
+}
+
+.suv {
+    background-color: var(--dark-cyan);
+}
+.suv > button {
+    color: var(--dark-cyan);
+}
+.suv > button:hover {
+    color: var(--very-light-gray);
+    background-color: var(--dark-cyan);
+}
+
+.lux {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+.lux > button {
+    color: var(--very-dark-cyan);
+}
+
+.lux > button:hover {
+    color: var(--very-light-gray);
+    background-color: var(--very-dark-cyan);
+}
+
+.text-heading {
+    font-family: var(--font-big-shld);
+    font-weight: 400;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding-top: 1.5rem;
+}
+
+.text-card {
+    font-family: var(--font-lexend);
+    font-size: 0.8rem;
+    padding-top: 1.5rem;
+
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        margin-top: 15rem;
+        max-width: 13.3rem;
+    }
+
+    .sedan {
+        border-radius: 0.5rem 0.50rem 0rem 0rem;
+    }
+
+    .lux {
+        border-radius: 0rem 0rem 0.5rem 0.5rem;
+    }
+}
