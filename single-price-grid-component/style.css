@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan: #4ABDBD;
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    --white: #fff;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 15px;
+    font-family: "Karla", sans-serif;
+    background-color: var(--light-gray);
+    
+}
+
+button {
+    background-color: var(--bright-yellow);
+    color: var(--white);
+    font-weight: 700;
+    padding: 0.7rem;
+    width: 100%;
+    border: none;
+    border-radius: .4rem;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: var(--white);
+    color: var(--bright-yellow);
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cyan);
+    padding-bottom: 0.5rem;
+
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--bright-yellow);
+}
+
+p {
+    color: var(--light-gray);
+}
+
+
+
+ul > li {
+    list-style-type: none;
+    color: var(--light-gray);
+    font-weight: 200;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40vw;
+    border-radius: 0.5rem;
+}
+
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+   
+}
+
+.row > .card {
+    flex: 1;
+}
+
+.card {
+    padding: 1.5rem;;
+}
+
+.white {
+    background-color: #fff;
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.white > .card-text {
+    color: var(--grayish-blue);
+}
+
+.cyan {
+    background-color: var(--cyan);
+    border-radius: 0 0 0 .4rem;
+}
+
+.light-cyan {
+    background-color: var(--light-cyan);
+    border-radius: 0 0 .4rem 0;
+}
+
+.sub-heading {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
+.card-text {
+    padding-top: 0.5rem;
+}
+
+.price {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.price-period {
+    font-weight: 200;
+    position: relative;
+    bottom: 0.3rem;
+}
+
+@media screen and (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .cyan {
+       
+        border-radius: 0 0 0 0;
+    }
+    
+    .light-cyan {
+        border-radius: 0 0 .4rem .4rem;
+    }
+    
+}
