@@ -79,6 +79,7 @@ span {
 
 .card {
     padding: 1rem;
+    background-color: #fff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
 }
@@ -110,9 +111,9 @@ span {
 
     header {
        width: 90%;
-       padding-top: 50vh;
+       padding-top: 30vh;
     }
-
+    
     .container {
         flex-direction: column;
     }
