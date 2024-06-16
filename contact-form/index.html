@@ -21,18 +21,20 @@
 <body>
 
   <div class="container">
-    <form action="">
+    <form onsubmit="handleSubmit(event)">
       <h1>Contact Us</h1>
 
       <div class="row">
 
         <div class="col">
           <label for="first-name">First Name *</label>
-          <input type="text" name="first-name">
+          <input type="text" name="first-name" id="first-name">
+          <p id="error-first-name"></p>
         </div>
         <div class="col">
           <label for="first-name">Last Name *</label>
-          <input type="text" name="last-name">
+          <input type="text" name="last-name" id="last-name">
+          <p id="error-last-name"></p>
         </div>
 
       </div>
@@ -41,29 +43,35 @@
         <div class="col">
           <label for="email">Email Adress *</label>
           <input type="email" name="email" id="email">
+          <p id="error-email"></p>
         </div>
       </div>
 
-      <legend>Query Type *</legend>
-      <div class="row">
-
-
-        <div class="col rdio">
-          <input type="radio" id="gen-enq" name="rdio" value="gen-enq" />
-          <label for="gen-enq">General Enquiry</label>
+      <div class="col">
+        <legend>Query Type *</legend>
+        <div class="row">
+  
+  
+          <div class="col rdio">
+            <input type="radio" id="gen-enq" name="rdio" value="gen-enq" />
+            <label for="gen-enq">General Enquiry</label>
+          </div>
+          
+          
+          <div class="col rdio">
+            <input type="radio" id="sup-req" name="rdio" value="sup-req" />
+            <label for="sup-req">Support Requests</label>
+          </div>
         </div>
+        <p id="error-radio"></p>
 
-        <div class="col rdio">
-          <input type="radio" id="sup-req" name="rdio" value="sup-req" />
-          <label for="sup-req">Support Requests</label>
-        </div>
       </div>
 
       <div class="row">
         <div class="col">
           <label for="message">Message *</label>
           <textarea name="message" id="message"></textarea>
-
+          <p id="error-message"></p>
         </div>
       </div>
 
@@ -71,6 +79,7 @@
         <input type="checkbox" name="conf" id="conf">
         <label for="conf">I consent to being contacted by the team *</label>
       </div>
+      <p id="error-consent"></p>
       <div class="row">
         <input type="submit" id="submitForm" value="Submit">
       </div>
@@ -80,43 +89,80 @@
   </div>
 
   <script>
-    document.getElementById('submitForm').addEventListener('click', function () {
-      alert("some text")
-    });
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      document.getElementById('error-first-name').innerHTML = '';
+      document.getElementById('error-last-name').innerHTML = '';
+      document.getElementById('error-email').innerHTML = '';
+      document.getElementById('error-radio').innerHTML = '';
+      document.getElementById('error-message').innerHTML = '';
+      document.getElementById('error-consent').innerHTML = '';
+
+
+      let firstName = document.getElementById('first-name');
+      let lastName = document.getElementById('last-name');
+      let email = document.getElementById('email');
+      let queryType = document.querySelector('input[name="rdio"]:checked');
+      let message = document.getElementById('message');
+      let consent = document.querySelector('input[name="conf"]:checked');
+
+
+      // Fields validation
+
+      if (firstName.value.trim() === '') {
+          document.getElementById('error-first-name').innerHTML = 'This field is required';
+          firstName.style.border = '1px solid red';
+      }
+
+      if (lastName.value.trim() === '') {
+          document.getElementById('error-last-name').innerHTML = 'This field is required';
+          lastName.style.border = '1px solid red';
+      }
+
+      if (email.value.trim() === '' || !isValidEmail(email.value.trim())) {
+          document.getElementById('error-email').innerHTML = 'Please enter a valid email address';
+          email.style.border = '1px solid red';
+      }
+
+      if (!queryType) {
+          document.getElementById('error-radio').innerHTML = 'Please select a query type';
+      }
+
+      if (message.value.trim() === '') {
+          document.getElementById('error-message').innerHTML = 'This field is required';
+          message.style.border = '1px solid red';
+      }
+
+      if (!consent) {
+        document.getElementById('error-consent').innerHTML = 'To submit this form, please consent to being contacted';
+      }
+
+  
+      alert(`Form sent! ${firstName.value}, ${lastName.value} , ${email.value}, ${queryType.value}, ${message.value}, ${consent.value}`);
+
+
+      document.getElementById('first-name').innerHTML = '';
+      document.getElementById('last-name').innerHTML = '';
+      document.getElementById('email').innerHTML = '';
+      document.getElementById('radio').innerHTML = '';
+      document.getElementById('message').innerHTML = '';
+      document.getElementById('consent').innerHTML = '';
+
+
+}
+
+    // Helper function to validate email format
+    function isValidEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+}
+
+
 
 
   </script>
 
-
-  <!-- This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon! -->
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 
 </html>

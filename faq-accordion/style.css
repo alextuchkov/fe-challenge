@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+  
+}
+
+body {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: purple;
+
+}
+
+.container {
+    background-color: white;
+
+}
+
+.acc-header {
+    font-weight: 800;
+}
