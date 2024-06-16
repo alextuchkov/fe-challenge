@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+
+
+    <div class="card">
+      <div id="question">
+        <img src="./images/icon-star.svg" alt="star-ico">
+      <p class="heading">How did we do?</p>
+      <p>Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</p>
+      <form onsubmit="handleForm(event)">
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="choice" value="1">
+            <span class="rdio-input">1</span>
+          </label>
+          <label>
+            <input type="radio" name="choice" value="2">
+            <span class="rdio-input">2</span>
+          </label>
+           <label>
+            <input type="radio" name="choice" value="3">
+            <span class="rdio-input">3</span>
+          </label>
+          <label>
+            <input type="radio" name="choice" value="4">
+            <span class="rdio-input">4</span>
+          </label>
+          <label>
+            <input type="radio" name="choice" value="5">
+            <span class="rdio-input">5</span>
+          </label>
+        </div>
+       
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+      </div>
+
+      <div id="thank-you" class="hidden">
+        <img src="./images/illustration-thank-you.svg" alt="thx-ico">
+        <br><br>
+        <span class="thank-you-answer" >
+            You selected <span id="answer"></span> out of 5
+        </span>
+    
+        <p class="heading">Thank you!</p>
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+          don’t hesitate to get in touch!</p>
+      </div>  
+      
+     
+    </div>
+
+
+<script>
+  function handleForm(event) {
+    event.preventDefault();
+    const selectedOption = document.querySelector('input[name="choice"]:checked').value;
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("thank-you").classList.remove("hidden");
+    document.getElementById("answer").innerText = selectedOption;
+
+  }
+
+</script>
+  
+</body>
+</html>

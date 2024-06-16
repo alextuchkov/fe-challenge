@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+  
+}
+
+body {
+    font-family: "Overpass", sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    color: var(--light-grey);
+}
+
+button {
+    background-color: var(--orange);
+    color: var(--very-dark-blue);
+    padding: 0.5rem;
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #454e5a;
+    appearance: none;
+}
+
+input[type='radio']:hover {
+    background-color: var(--orange);
+    color: var(--very-dark-blue);
+  }
+
+input[type='radio']:checked {
+    background-color: var(--white);
+    color: var(--very-dark-blue);
+  }
+
+.card {
+    padding-top: 1rem;
+    border-radius: 1rem;
+    background-color: var(--dark-blue);
+    max-width: 20rem;
+    padding: 1rem;
+}
+
+
+#thank-you {
+    text-align: center; 
+}
+
+.thank-you-answer {
+    color: var(--orange);
+    background-color: #454e5a;
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    margin: 1rem 0; /* Add margin to create space */
+    
+}
+
+#thank-you, #question > * {
+    margin-top: 1rem;
+}
+
+.heading {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.rdio-input {
+    position: relative;
+    top: -0.7rem;
+    left: -1.65rem;
+}
