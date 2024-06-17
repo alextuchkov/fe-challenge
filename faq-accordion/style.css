@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+    --pink: #B024F0;
+}
+
 *,
 *::before,
 *::after {
@@ -7,21 +17,69 @@
 }
 
 body {
-    font-size: 15px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: purple;
+    min-height: 100vh;
+    color:var(--grayish-purple);
+    background: url(assets/images/background-pattern-desktop.svg) no-repeat;
+    background-size: 100% auto;
+    background-color: var(--light-pink);
+}
 
+h1 {
+    color: var(--dark-purple);
+}
+
+hr {
+    border-top: 1px solid var(--light-pink);;
 }
 
 .container {
     background-color: white;
+    border-radius: 0.5rem;
+    max-width: 40vw;
+    padding: 1rem;
+}
 
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.accordion-item  {
+    max-width: 90%;
+}
+
+.accordion-content {
+    height: 0px;
+    overflow: hidden;
+}
+
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-header.active + .accordion-content {
+    height: auto;
+    transition: 0.7s;
+    transform: rotate(0deg);
 }
 
 .acc-header {
-    font-weight: 800;
+    font-weight: 700;
+    color: var(--dark-purple);
+}
+
+.acc-header:hover {
+    color: var(--pink);
+}
+
+.hide {
+    display: none;
 }
