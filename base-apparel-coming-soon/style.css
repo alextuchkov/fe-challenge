@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    /* Primary */
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    /* Neutral */
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    /* Gradients */
+    --grad-a: linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+    --grad-b: linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+};
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+  
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color:var(--dark-grayish-red);
+  
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-top: 3rem;
+}
+
+h1 > span {
+    color: var(--desaturated-red);
+}
+
+p {
+    color: var(--desaturated-red);
+}
+
+input[type=email] {
+    border-radius: 1rem;
+    border: 1px solid var(--desaturated-red);
+    padding: 0.5rem 1rem;
+}
+
+input[type=email]::placeholder {
+    color: var(--desaturated-red);
+
+}
+
+button {
+    position: relative;
+    top: -2.5rem;
+    left: 24rem;
+    background-color: pink;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 4.5rem;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+button:hover {
+    background-color: var(--desaturated-red);
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 50rem;
+    background-color: #fff;
+  
+}
+
+.text, .illustration {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    min-width: 55%;
+    padding: 2rem 4rem 3.5rem 3rem;
+}
+
+.illustration {
+    min-width: 45%;
+}
+
+.mobile-img {
+    display: none;
+}
+
+.logo {
+    width: 9rem;
+    height: auto;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .mobile-img {
+        display: block;
+    }
+
+    .desk-img {
+        display: none;
+    }
+
+
+}
