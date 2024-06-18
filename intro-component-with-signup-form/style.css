@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --border-rds: 0.3rem;
+
+
+    --red: hsl(0, 100%, 74%) ;
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%) ;
+    --grayish-blue: hsl(246, 25%, 77%);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--red);
+    background-image: url('./images/bg-intro-desktop.png');
+    background-size: 100%;
+    color: #fff;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+form > input {
+    padding: 1rem;
+    margin: 0.2rem;
+    border-radius: var(--border-rds);
+    border: 1px solid var(--grayish-blue);
+}
+
+button {
+    background-color: var(--green);
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.5rem;
+    border-radius: var(--border-rds);
+    
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: hsl(155, 47%, 63%);
+
+}
+
+
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 2.4rem;
+    padding-bottom: 1rem;
+
+}
+
+
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.form-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-rds);
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.special-price {
+    border-radius: var(--border-rds);
+    background-color: var(--blue);
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.special-price-accent {
+    font-weight: 600;
+}
+
+.tac {
+    color: var(--grayish-blue);
+    font-size: 0.6rem;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.tac > a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.error-ico {
+    background-image: url('./images/icon-error.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 2rem) center;
+    padding-right: 3rem; 
+    background-size: 1rem;
+    border: 2px solid var(--red);
+ }
+ 
+
+@media screen and (max-width:800px) {
+
+    body {
+        background-image: url('./images/bg-intro-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .text-section {
+        text-align: center;
+    }
+}
