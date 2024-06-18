@@ -144,6 +144,9 @@ form {
         padding: 2rem;
     }
 
+    .logo {
+        padding-bottom: 1rem;
+    }
     .mobile-img {
         display: block;
     }
@@ -152,12 +155,12 @@ form {
         display: none;
     }
 
-    button {
-        left: 0;
-        margin-top: 1rem;
+    form {
+        padding-left: 2rem;
     }
 
     #error-ico {
-        left: 0;
+        top: 0.5rem;
+        left: -3rem;
     }
 }
