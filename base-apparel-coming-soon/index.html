@@ -8,28 +8,61 @@
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 </head>
 <body>
-  <div class="card">
+  <main>
+    <section class="text">
+      <img class="logo" src="./images/logo.svg" alt="Logo">
+      <img class="mobile-img" src="./images/hero-mobile.jpg" alt="mobile of the image">
+      <h1><span>We're</span><br> coming <br>soon</h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        <form onsubmit="handleSubmit(event)">
+          <input type="text" id="email" name="email" placeholder="Email Address">
+          <img src="./images/icon-error.svg" id="error-ico" class="hidden" alt="error ico">
+          <button type="submit"><img src="./images/icon-arrow.svg" alt="arrow"></button>
+        </form>
+        <span id="validation-text"></span>
+    
+    </section>
+  
+
+  <section class="illustration">
+      <img class="desk-img"  src="./images/hero-desktop.jpg" alt="Description of the image">
+    
+  </section>
+
+  </main>
     
 
-  
-      <div class="text">
-        <img class="logo" src="./images/logo.svg" alt="Logo">
-        <img class="mobile-img" src="./images/hero-mobile.jpg" alt="mobile of the image">
-        <h1><span>We're</span><br> coming <br>soon</h1>
-        <p>Hello fellow shoppers! We're currently building our new fashion store. 
-          Add your email below to stay up-to-date with announcements and our launch deals.</p>
-        <input type="email" placeholder="Email Address">
-        <button><img src="./images/icon-arrow.svg" alt="arrow"></button>
-      
-      </div>
+  <script>
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    let emailInput = document.getElementById('email');
+    let emailValidation = document.getElementById('validation-text');
+    let errorIco = document.getElementById('error-ico');
 
 
+    if (isValidEmail(emailInput.value)) {
+      emailValidation.innerHTML = 'Email submitted!';
+      emailInput.style.border = '1px solid green';
+      emailValidation.style.color = 'green';
+      errorIco.classList.add('hidden');
+    }
+    else {
+      emailValidation.innerHTML = 'Please provide a valid email'
+      emailValidation.style.color = 'var(--soft-red)';
+      emailInput.style.border = '1px solid var(--soft-red)';
+      errorIco.classList.remove('hidden');
+    }
+  }
 
-    <div class="illustration">
-        <img class="desk-img"  src="./images/hero-desktop.jpg" alt="Description of the image">
-      
-    </div>
 
-  </div>
+    function isValidEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);}
+  </script>
+
+
 </body>
 </html>
