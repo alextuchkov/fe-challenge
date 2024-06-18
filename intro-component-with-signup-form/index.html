@@ -33,14 +33,14 @@
     
     <div class="form-card">
       <form onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="First Name">
-        <span id="validation-text"></span>
-        <input type="text" placeholder="Last Name">
-        <span id="validation-text"></span>
+        <input type="text" id="first-name" placeholder="First Name">
+        <span id="validation-text-fn"></span>
+        <input type="text" id="last-name" placeholder="Last Name">
+        <span id="validation-text-ln"></span>
         <input type="text" id="email" placeholder="Email Address">
         <span id="validation-text-email"></span>
-        <input type="text" placeholder="Password">
-        <span id="validation-text"></span>
+        <input type="text" id="password" placeholder="Password">
+        <span id="validation-text-pw"></span>
         <button type="submit">Claim your free trial </button>
 
       </form>
@@ -55,27 +55,63 @@
 function handleSubmit(event) {
   event.preventDefault();
 
+  let form = document.querySelector('form');
+  
+  let allInputs = document.querySelectorAll('input');
+  let allValidationTexts = form.querySelectorAll('span');
+
+
+  let firstName = document.getElementById('first-name');
+  let fnValidation = document.getElementById('validation-text-fn')
+
+  let lastName = document.getElementById('last-name');
+  let lastNameValidation = document.getElementById('validation-text-ln');
+
   let emailInput = document.getElementById('email');
   let emailValidation = document.getElementById('validation-text-email');
 
 
-  if (isValidEmail(emailInput.value)) {
-    emailValidation.innerHTML = 'Email submitted!';
-    emailInput.style.border = '1px solid green';
-    emailValidation.style.color = 'green';
-    
-  }
-  else {
-    emailValidation.innerHTML = 'Please provide a valid email'
-    emailValidation.style.color = 'var(--red)';
-    emailInput.classList.add('error-ico');
-  }
-}
+  let password = document.getElementById('password');
+  let passwordValidation = document.getElementById('validation-text-pw');
 
+  console.log(allInputs);
+
+  // handling positive case
+  if ( firstName && lastName && isValidEmail(emailInput.value) && password) {
+    for (let i = 0; i < allInputs.length; i++) {
+      allInputs[i].classList.add('success')
+    }
+    for (let j=0; j<allValidationTexts.length; j++) {
+      allValidationTexts[j].style.color = 'var(--green)'
+    }
+    fnValidation.innerHTML = 'Name submitted';
+    lastNameValidation.innerHTML = 'Last name submitted'
+    emailValidation.innerHTML = 'Email submitted!'
+    passwordValidation.innerHTML = 'Password submitted';
+  }
+
+  // negative case: all fields are empty
+  else {
+    for (let i = 0; i < allInputs.length; i++) {
+      allInputs[i].classList.add('error')  }
+
+      for (let j=0; j<allValidationTexts.length; j++) {
+       allValidationTexts[j].style.color = 'var(--red)'
+    }
+
+      fnValidation.innerHTML = 'First Name cannot be empty';
+      lastNameValidation.innerHTML = 'Last Name cannot be empty'
+      emailValidation.innerHTML = 'Looks like this not an email'
+      passwordValidation.innerHTML = 'Password cannot be empty';
+      
+  }
+    
 
   function isValidEmail(email) {
       var re = /\S+@\S+\.\S+/;
       return re.test(email);}
+  }
+
 </script>
 
   
