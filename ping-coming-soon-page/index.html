@@ -15,13 +15,17 @@
   <header>
     <img class="logo" src="./images/logo.svg" alt="logo">
     <h1> <span class="header-accent">We are launching </span>soon!</h1>
-    <p class="header-tagline">Subscribe and get notified</p>
+    <spa class="header-tagline">Subscribe and get notified</spa>
   </header>
   <main>
     <section>
-      <form>
-        <input type="text" placeholder="Your email address">
-        <button type="submit">Notify me</button>
+      <form onsubmit="handleSubmit(event)">
+      
+          <input type="text" id="email-input" placeholder="Your email address">
+          <button type="submit">Notify me</button>
+          <span id="email-validation"></span>        
+        
+        
       </form>
     </section>
     <section>
@@ -39,7 +43,27 @@
   </main>
 
 
- 
+ <script>
+   function handleSubmit(event) {
+    event.preventDefault();
+
+    let emailInput = document.getElementById('email-input');
+    let emailValidation = document.getElementById('email-validation');
+
+    if (isValidEmail(emailInput.value)) {
+      emailValidation.innerHTML = 'Email submitted!';
+      emailValidation.style.color = 'green';
+    } else {
+      emailValidation.style.color = "red";
+      emailValidation.innerHTML = 'Please provide a valid email';
+
+    }
+   }
+
+   function isValidEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);}
+ </script>
 
 
 </body>
