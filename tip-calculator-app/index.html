@@ -13,56 +13,61 @@
 
 </head>
 <body>
+  <img class="logo" src="./images/logo.svg" alt="logo">
   <div class="container">
     <div class="input">
       <label for="total">Bill</label>
-      <input type="number" id="total" placeholder="$">
+      <input type="number" id="total" placeholder="0" oninput="handleInput()">
 
-      <label>Select Tip%</label>
-      <div class="row">
-        <label for="five">5%</label>
-        <input type="radio" id="five" value="5" name="defined-tip">
+      <label>Select Tip %</label>
+
+      <div class="radio-group">
+        <label class="radio-button">
+          <input type="radio" id="five" value="0.05" name="defined-tip" onclick="handleInput()">
+          <span class="radio-input">5%</span>
+        </label>
+        <label class="radio-button">
+          <input type="radio" id="ten" value="0.1" name="defined-tip" onclick="handleInput()">
+          <span class="radio-input">10%</span>
+        </label>
+        <label class="radio-button">
+          <input type="radio" id="fiveten" value="0.15" name="defined-tip" onclick="handleInput()">
+          <span class="radio-input">15%</span>
+        </label>
+        <label class="radio-button">
+          <input type="radio" id="twentyfive" value="0.25" name="defined-tip" onclick="handleInput()">
+          <span class="radio-input">25%</span>
+        </label>
+        <label class="radio-button">
+          <input type="radio" id="fifty" value="0.5" name="defined-tip" onclick="handleInput()">
+          <span class="radio-input">50%</span>
+        </label>
+       
+          <input type="number" id='custom-tip' oninput="handleInput()" placeholder="Custom"> 
+    
       </div>
-      <div class="row">
-        <input type="radio" id="ten" value="10"  name="defined-tip">
-        <label for="ten">10%</label>
-      </div>
-      <div class="row">
-        <input type="radio" id="fiveten" value="15"  name="defined-tip">
-        <label for="ten">15%</label>
-      </div>
-      <div class="row">
-        <input type="radio" id="twentyfive" value="25"  name="defined-tip">
-        <label for="ten">25%</label>
-      </div>
-      <div class="row">
-        <input type="radio" id="fifty" value="50"  name="defined-tip">
-        <label for="ten">50%</label>
-      </div>
+
+    
       
-      <input type="number" id='custom-tip' placeholder='Tip %'> 
-
       <label>Number of people</label>
-      <input type="number" id="number-ppl" placeholder="number-ppl">
+      <input type="number" id="number-ppl" placeholder="0"  oninput="handleInput()">
              
       
     </div>
     <div class="output">
       <div>
-        <p>Tip Amount <br>/ person</p>
-        <p>Total/ <br> person</p>
-
-        
+        <p>Tip Amount <br><span class="sub-text">/ person</span></p>
+        <p>Total<br><span class="sub-text">/person</span></p>
       </div>
       
       <div>
-        <p id="total-per-person">$0.00</p>
         <p id="total-tip">$0.00</p>
+        <p id="total-per-person">$0.00</p>
 
       </div>
 
       <div class="reset-button">
-        <button  onclick="handleSubmit()">Submit</button>
+        <button onclick="resetForm()">Reset</button>
         
       </div>
 
@@ -70,23 +75,6 @@
     </div>
   </div>
 
-  <!-- Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  
-
-  
-
-  Reset -->
 <script src="index.js">
 
 </script>
